@@ -58,13 +58,19 @@ const tools = {
        {id: 30, name: 'pinos de prateleira', description: '', checked: false},
        {id: 31, name: 'suporte de cabideiro', description: '', checked: false},
        {id: 32, name: 'fitas pvc', description: '', checked: false},
+       {id: 33, name: 'tapa-furos', description: '', checked: false},
+   ],
+   projectMaterials:[
+    {id:1, name: 'Projeto', description: '',},
+    {id:2, name: 'ferragens do móvel', description: ''},
    ],
 
 };
 function App() {
+  
   return (
     <div className="App">
-      <header><h1>Lista de ferramentas e materiais para viagem</h1></header>
+      
       <h1>Ferramentas elétricas</h1>
        {tools.eletrics.map((Data) => (
           <List key={Data.id} nome={Data.name}/>))}
@@ -74,7 +80,8 @@ function App() {
       <h1>Materiais úteis</h1>
        {tools.usefulMaterials.map((Data) => (
           <List key={Data.id} nome={Data.name}/>))}
-      
+      <h1>Itens de montagem de módulos</h1>
+      {tools.projectMaterials.map((Data) => (<List key={Data.id} nome={Data.name}/>))}
     </div>
   );
 }

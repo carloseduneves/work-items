@@ -8,6 +8,7 @@
 }
 .noChecked{
     background-color: antiquewhite;
+    transition: 1s;
 }
 .container{
     display: flex;
@@ -23,7 +24,7 @@
 }
 .btnChecked{
     background-color: white;
-    border: solid 2px rgb(87, 87, 87);
+    border: solid 2px rgb(154, 154, 154);
     width: 100px;
     height: 30px;
     border-radius: 40px;
@@ -32,7 +33,8 @@
     justify-content: center;
     text-align: center;
     font-weight: bold;
-    color: rgb(87, 87, 87);
+    color: rgb(85, 84, 84);
+    transition: 0.5s;
 }
 .btnClicked{
     border: none;

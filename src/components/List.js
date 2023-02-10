@@ -4,16 +4,23 @@ import { useState } from "react";
 import "./List.css";
  function List ({nome}) {
     const [textButton, setTextButton] = useState('inserir item');
-    const [styleBtn, setStyleBtn] = useState('')
+    const [styleBtn, setStyleBtn] = useState('');
     const [color, setColor] = useState('noChecked');
-  return (
-    <div className={`container ${color}`}>
-      <h2 >{nome}</h2> 
-      <input type="button" value={textButton} onClick={() => {
+    const statusChange = () => {
+      if(color === 'noChecked'){
         setColor('checked');
         setStyleBtn('btnClicked');
         setTextButton('inserido')
-        }} className={`btnChecked ${styleBtn}`}/>
+      }else{
+        setColor('noChecked');
+        setTextButton('inserir item');
+        setStyleBtn('');
+      }
+    }
+  return (
+    <div className={`container ${color}`}>
+      <h2 >{nome}</h2> 
+      <input type="button" value={textButton} onClick={statusChange} className={`btnChecked ${styleBtn}`}/>
 
     </div>
   )
